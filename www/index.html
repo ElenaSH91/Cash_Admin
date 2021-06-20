@@ -44,18 +44,9 @@
             <div class="navbar">
                 <div class="navbar-bg"></div>
                 <div class="navbar-inner">
-                    <div class="left"><i class="icon icon-back"></i></div>
-                    <div class="title">CASH ADMIN</div>
-                    <div class="right"><i class="icon icon-forward"></i></div>
-                </div>
-            </div>
-
-            <!-- Toolbar -->
-            <div class="toolbar toolbar-bottom">
-                <div class="toolbar-inner">
-                <!-- Toolbar links -->
-                <a href="#" class="link">Link 1</a>
-                <a href="#" class="link">Link 2</a>
+                    <div class="left"><a href="#" id="irAtras" class="link back"><i class="icon icon-back"></i></a></div>
+                    <div class="title" id="title_top">Cash Admin</div>
+                    <div class="right"><a href="#" id="irAConfig"><i class="material-icons">settings</i></a></div>
                 </div>
             </div>
 
@@ -64,59 +55,46 @@
                 <!-- Scrollable page content -->
                 <div class="page-content">
                     <div class="block">
-                        <p>Page content goes here</p>
-                        <!-- Link to another page -->
-                        <a href="/ingresos/" data-view=".page-content">Ingresos</a>
-
-                        <!-- In data-popup attribute we specify CSS selector of popup we need to open -->
-                        <p><a href="#" data-popup=".my-popup" class="popup-open">Open Popup</a></p>
-
-                        <!-- And somewhere in DOM -->
-                        <div class="popup my-popup">
-                            <div class="view">
-                                <div class="page">
-                                    <div class="navbar">
-                                        <div class="navbar-bg"></div>
-                                        <div class="navbar-inner">
-                                            <div class="title">Popup</div>
-                                            <div class="right">
-                                                <!-- Link to close popup -->
-                                                <a class="link popup-close">Close</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="page-content">
-                                      ...
-                                    </div>
-                                </div>
+                      <div class="block block-strong inset">
+                        <div class="col flex-direction-column">
+                          <div class="col">
+                            <div class="elevation-demo elevation-transition">Ingresos: AR$</div>
+                            <!-- Green progressbar -->
+                            <div class="progressbar color-green" data-progress="100">
+                              <span></span>
                             </div>
+                          </div>
+                          <br>
+
+                          <div class="col">
+                            <div class="elevation-demo elevation-transition">Gastos: AR$</div>
+                            <!-- Red progressbar -->
+                            <div class="progressbar color-red" data-progress="20">
+                              <span></span>
+                            </div>
+                          </div>
+                          <br>
+
+                          <div class="col">
+                            <div class="elevation-demo elevation-transition">Saldo: AR$</div>
+                          </div>
                         </div>
+                      </div>
+
+                      <div class="block block-strong">
+                        <div class="block list col flex-direction-column">
+                          <a href="#" id="irAIngresos"><button class="col button button-large button-raised button-fill">Ingresos</button></a> <br>
+                          <a href="#" id="irAGastos"><button class="col button button-large button-raised button-fill">Gastos</button></a> <br>
+                          <a href="#" id="irACuentas"><button class="col button button-large button-raised button-fill">Cuentas</button></a> <br>
+                          <a href="#" id="irAInformes"><button class="col button button-large button-raised button-fill">Informes</button></a> <br>
+                          <a href="#" id="irAMas"><button class="col button button-large button-raised button-fill">Más</button></a>
+                        </div>
+                      </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
-
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
-    <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyBGhBJoUUP61X5XUhqp6jySTs5eD0HZD1g",
-        authDomain: "cash-admin-3f857.firebaseapp.com",
-        projectId: "cash-admin-3f857",
-        storageBucket: "cash-admin-3f857.appspot.com",
-        messagingSenderId: "708678366517",
-        appId: "1:708678366517:web:3437fd10517bad7a7f087c"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    </script>
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/framework7-bundle.min.js"></script>
