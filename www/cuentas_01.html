@@ -1,0 +1,60 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax.  -->
+<div class="page" data-name="cuentas_01">
+  <!-- Top Navbar -->
+  <div class="navbar">
+      <div class="navbar-bg"></div>
+      <div class="navbar-inner padding-left">
+          <div class="title" id="title_top"></div>
+      </div>
+  </div>
+
+  <div class="toolbar toolbar-bottom">
+    <p class="button color-purple">
+      <button class="button" id="cueCancel">CANCELAR</button>
+      <button class="button" id="cueSave">GUARDAR</button>
+    </p>
+  </div>
+  <div class="page-content">
+    <div class="block">
+      <div class="list block-list no-hairlines-md">
+        <ul>
+          <li>
+            <div class="item-content item-input item-input-outline">
+              <div class="item-inner">
+                <div class="item-title item-floating-label">Nombre de la Cuenta</div>
+                <div class="item-input-wrap">
+                  <input type="text" placeholder="Nombre" autocomplete="off" id="nameCuenta">
+                  <span class="input-clear-button"></span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content item-input item-input-outline">
+              <div class="item-inner">
+                <div class="item-title item-floating-label">Saldo Inicial</div>
+                <div class="item-input-wrap">
+                  <input type="number" min="0.00" max="100000.00" step="0.01" placeholder="$0.00" autocomplete="off" id="montoCuenta">
+                  <span class="input-clear-button"></span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+          <div class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-floating-label">Seleccionar Color</div>
+            </div>
+          </div>
+          </li>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-media">
+                <i class="icon demo-list-icon" id="demo-color-picker-spectrum-value"></i>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
