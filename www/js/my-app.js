@@ -29,9 +29,6 @@ var app = new Framework7({
       {path: '/informes/', url: 'informes.html',},
       {path: '/config/', url: 'config.html',},
       {path: '/mas/', url: 'mas.html',},
-
-
-      {path: '/cuentas_01/', url: 'cuentas_01.html',},
     ]
     // ... other parameters
   });
@@ -277,8 +274,6 @@ function fnIrAMas(){ // Pantalla Más
   mainView.router.navigate("/mas/", {transition:"f7-fade"});
 }
 
-/
-
 /*----Función Calendario----*/
 function fnCalendario(){
   calendarModal = app.calendar.create({
@@ -288,6 +283,7 @@ function fnCalendario(){
           footer: true,
         });
 }
+
 /*----Función Elegir Color----*/
 function fnColorPicker() {
   colorPickerSpectrum = app.colorPicker.create({
