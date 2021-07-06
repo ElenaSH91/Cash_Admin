@@ -1,0 +1,79 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax.  -->
+<div class="page" data-name="ingresos_01">
+  <!-- Top Navbar -->
+  <div class="navbar">
+      <div class="navbar-bg"></div>
+      <div class="navbar-inner padding-left">
+          <div class="title" id="title_top"></div>
+      </div>
+  </div>
+  <div class="toolbar toolbar-bottom">
+    <p class="button color-purple">
+      <button class="button" id="ingCancel">CANCELAR</button>
+      <button class="button" id="ingSave">GUARDAR</button>
+    </p>
+  </div>
+    <div class="page-content">
+      <div class="block">
+        <div class="list block-list no-hairlines-md">
+          <ul>
+            <li>
+              <div class="item-content item-input item-input-outline">
+                <div class="item-inner">
+                  <div class="item-title item-floating-label">Ingresar Monto</div>
+                    <div class="item-input-wrap">
+                    <input type="number" min="0.00" max="100000.00" step="0.01" placeholder="$0.00" autocomplete="off" id="montoIngre" />
+                    <span class="input-clear-button"></span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="item-content item-input item-input-outline">
+                <div class="item-inner">
+                  <div class="item-title item-floating-label">Seleccionar Fecha</div>
+                    <div class="item-input-wrap">
+                    <input type="text" placeholder="dd/mm/aa" readonly="readonly" id="demo-calendar-modal" />
+                    <span class="input-clear-button"></span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="item-content item-input item-input-outline">
+                <div class="item-inner">
+                  <div class="item-title item-floating-label">Seleccionar Categoría</div>
+                    <div class="item-input-wrap">
+                    <input type="text" placeholder="No Categorizado" readonly="readonly" autocomplete="off" id="categoIngre" />
+                    <span class="input-clear-button"></span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="item-content item-input item-input-outline">
+                <div class="item-inner">
+                  <div class="item-title item-floating-label">Seleccionar Pagador</div>
+                    <div class="item-input-wrap">
+                    <input type="text" placeholder="Pagador" autocomplete="off" id="selecPaga" />
+                    <span class="input-clear-button"></span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="item-content item-input item-input-outline">
+                <div class="item-inner">
+                  <div class="item-title item-floating-label">Agregar Notas</div>
+                    <div class="item-input-wrap">
+                    <input type="text" placeholder="Notas" autocomplete="off" id="selecNotasI" />
+                    <span class="input-clear-button"></span>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
