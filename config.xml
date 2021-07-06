@@ -4,7 +4,7 @@
     <description>
         Cash Admin is an app to manage your expenses, saving your time and money.
     </description>
-    <author email="elena.sanchez.hermosilla@gmail.com" href="">
+    <author email="elena.sanchez.hermosilla@gmail.com" href="https://github.com/ElenaSH91">
         Elena Sánchez Hermosilla
     </author>
     <content src="index.html" />
@@ -26,7 +26,11 @@
 
     <allow-navigation href="*" />
 
+
     <platform name="android">
+    <preference name="Orientation" value="portrait" />
+    <preference name="KeepRunning" value="true"/>
+    <preference name="SetFullscreen" value="true"/>
     <preference name="SplashMaintainAspectRatio" value="true"/>
     <preference name="SplashShowOnlyFirstTime" value="true"/>
     <icon density="ldpi" src="res/icon/android/ldpi.png"/>
@@ -116,7 +120,6 @@
     <splash src="res/screen/windows/splashscreenphone.png" target="SplashScreenPhone"/>
     </platform>
 
-
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="BackupWebStorage" value="local" />
@@ -127,4 +130,5 @@
     <preference name="Allow3DTouchLinkPreview" value="false" />
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     <preference name="AllowInlineMediaPlayback" value="true" />
+
 </widget>
