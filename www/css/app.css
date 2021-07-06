@@ -1,4 +1,6 @@
 /* Your app custom styles here */
+/*@import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 /* poppins-regular - latin */
 @font-face {
   font-family: 'Poppins';
@@ -78,10 +80,14 @@
        url('../fonts/poppins-v13-latin-900italic.svg#Poppins') format('svg'); /* Legacy iOS */
 }
 
-
-
-* {
+/* {
 	font-family: 'Poppins', Arial, sans-serif;
 }
 
+* {
+	font-family: 'Contrail One', cursive;
+}*/
 
+* {
+	font-family: 'Open Sans', sans-serif;
+}
