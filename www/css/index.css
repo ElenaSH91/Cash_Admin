@@ -1,4 +1,4 @@
-/*
+*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -27,19 +27,18 @@ body {
     background-color:#E4E4E4;
     background-image:linear-gradient(to bottom, #A7A7A7 0%, #E4E4E4 51%);
     font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
-    font-size:12px;
+    font-size:14px;
     height:100vh;
     margin:0px;
     padding:0px;
     /* Padding to avoid the "unsafe" areas behind notches in the screen */
     padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
-    text-transform:uppercase;
     width:100%;
 }
 
 /* Portrait layout (default) */
 .app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    background:url(../img/ca_logo.png) no-repeat center top; /* 170px x 200px */
     position:absolute;             /* position in the center of the screen */
     left:50%;
     top:50%;
@@ -105,6 +104,135 @@ h1 {
 
 @media screen and (prefers-color-scheme: dark) {
     body {
-        background-image:linear-gradient(to bottom, #585858 0%, #1B1B1B 51%);
+        /*background-image:linear-gradient(to bottom, #585858 0%, #1B1B1B 51%);*/
+        background: linear-gradient(to right, #2F0059, #FF16CE);
     }
+}
+
+.elevation-demo {
+  height: 200px;
+  margin: 30px 10px;
+  padding: 20px;
+  background: #fff;
+  font-size: 30pt;
+  text-align: left;
+  line-height: 100px;
+  border-radius: 5px;
+}
+
+/*********** Login Screen *************/
+
+.login-screen .page, .login-screen-content, .login-screen-page {
+  padding-top: 80px;
+}
+
+.list .item-floating-label, .list .item-label {
+  color: #2F0059;
+}
+
+.login-screen-content .list-button, .login-screen-page .list-button {
+  text-align: center;
+  color: #542294;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.block-footer {
+  color: #2F0059;
+}
+
+.pregun1 {
+  font-size: 12pt;
+}
+
+#regis_1 {
+  color: #FFF;
+}
+
+
+/*********** All Pages *************/
+.navbar-bg {
+  background-color: #2F0059;
+}
+
+.navbar {
+  color: #fff;
+}
+
+.button-fill {
+  background-color: #542294;
+  justify-content: space-between;
+  padding: 0px 10px 0px 10px;
+}
+
+.icon-back {
+  color: #fff;
+}
+
+
+/*********** All Pages *************/
+
+#ingCancel, #gasCancel, #cueCancel {
+  font-size: 12pt;
+  text-align: center;
+  color: #2F0059;
+  align-items: center;
+  margin-left: auto;
+  margin-top: 10px;
+  border-style: hidden;
+  height: 40px;
+  background-color: transparent;
+}
+
+#ingSave, #gasSave, #cueSave {
+  font-size: 12pt;
+  text-align: center;
+  color: #2F0059;
+  align-items: center;
+  margin-left: auto;
+  margin-top: 10px;
+  border-style: hidden;
+  height: 40px;
+  background-color: transparent;
+}
+
+.mesASal {
+  align-items: center;
+  justify-content: space-around;
+}
+
+#currentMA{
+  margin-left: 80px;
+  margin-right: 10px;
+}
+
+#currentS{
+  margin-right: 40px;
+  margin-left: 10px;
+}
+
+.dere1 {
+  text-align: right;
+}
+
+/*********** Color Picker *************/
+.demo-list-icon,
+.icon-f7 {
+  background: #ccc;
+  display: block;
+  position: relative;
+}
+
+.ios .demo-list-icon {
+  width: 250px;
+  height: 45px;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.md .demo-list-icon,
+.aurora .demo-list-icon {
+  width: 250px;
+  height: 45px;
+  border-radius: 4px;
 }
