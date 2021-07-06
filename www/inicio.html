@@ -1,0 +1,76 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax.  -->
+<div class="page" data-name="inicio">
+  <!-- Top Navbar -->
+  <div class="navbar">
+      <div class="navbar-bg"></div>
+      <div class="navbar-inner padding-left padding-right">
+        <div class="left"><a href="#" id="irALogin"><i class="icon icon-back"></i></a></div>
+        <div class="title" id="title_top"></div>
+        <div class="right"><a href="#" id="irAConfig"><i><img src="img/settings.png" width="40px" height="40px"></i></a></div>
+      </div>
+  </div>
+  <!-- Scrollable page content -->
+  <div class="page-content">
+    <div class="block">
+      <div class="block">
+        <div class="col flex-direction-column">
+          <!-- Total en Ingresos -->
+          <div class="col">
+            <div class="" id="ingresos"><p>Ingresos: AR$</p></div>
+            <!-- Green progressbar -->
+            <div class="progressbar color-green" data-progress="100">
+              <span></span>
+            </div>
+          </div>
+          <!-- Total en Gastos -->
+          <div class="col">
+            <div class="" id="gastos"><p>Gastos: AR$</p></div>
+            <!-- Red progressbar -->
+            <div class="progressbar color-red" data-progress="20">
+              <span></span>
+            </div>
+          </div>
+          <!-- Saldo Total -->
+          <div class="col">
+            <div class="text-align-center" id="saldo"><p>Saldo: AR$</p></div>
+          </div>
+        </div>
+      </div>
+      <!-- Inicia Botonera -->
+      <div class="block block-strong">
+        <div class="block list col flex-direction-column">
+          <!-- Botón Ingresos -->
+          <div class="flex-direction-row">
+            <a href="#" id="irAIngresos">
+              <button class="col button button-large button-raised button-fill">Ingresos <img src="img/income.png" width="36px" height="36px"></button>
+            </a>
+          </div>
+          <!-- Botón Gastos -->
+          <div class="flex-direction-row margin-top">
+            <a href="#" id="irAGastos">
+              <button class="col button button-large button-raised button-fill">Gastos <img src="img/expense.png" width="36px" height="36px"></button>
+            </a>
+          </div>
+          <!-- Botón Cuentas -->
+          <div class="flex-direction-row margin-top">
+            <a href="#" id="irACuentas">
+              <button class="col button button-large button-raised button-fill">Cuentas <img src="img/accounts.png" width="36px" height="36px"></button>
+            </a>
+          </div>
+          <!-- Botón Informes -->
+          <div class="flex-direction-row margin-top">
+            <a href="#" id="irAInformes">
+              <button class="col button button-large button-raised button-fill">Informes <img src="img/reports.png" width="36px" height="36px"></button>
+            </a>
+          </div>
+          <!-- Botón Más -->
+          <div class="flex-direction-row margin-top">
+            <a href="#" id="irAMas">
+              <button class="col button button-large button-raised button-fill">Más <img src="img/more.png" width="36px" height="36px"></button>
+            </a>
+          </div>
+        </div> <!-- Fin block list -->
+      </div> <!-- Fin Botonera -->
+    </div> <!-- Fin Block principal -->
+  </div> <!-- Fin Page Content -->
+</div>
