@@ -9,9 +9,9 @@
             * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
 
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline'; font-src * data: URIs ">
+-->
     <!-- Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
@@ -30,8 +30,11 @@
     <link rel="stylesheet" href="css/icons.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/app.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/index.css">
     <!-- Favicon-->
     <link rel="icon" type="image/png" href="img/ca_icon.png"/>
+
 </head>
 
 <body>
@@ -42,91 +45,88 @@
         <!-- Your main view, should have "view-main" class -->
         <div class="view view-main">
 
-            <!-- Top Navbar -->
-            <div class="navbar">
-                <div class="navbar-bg"></div>
-                <div class="navbar-inner">
-                    <div class="left"><a href="#" id="irAtras" class="link back"><i class="icon icon-back"></i></a></div>
-                    <div class="title" id="title_top">Cash Admin</div>
-                    <div class="right"><a href="#" id="irAConfig"><i><img src="img/settings.png" width="40px" height="40px"></i></a></div>
-                </div>
-            </div>
-
         <!-- Initial Page, "data-name" contains page name -->
             <div data-name="index" class="page">
-                <!-- Scrollable page content -->
-                <div class="page-content">
-                    <div class="block">
-                      <div class="block">
-                        <div class="col flex-direction-column">
-                          <!-- Total en Ingresos -->
-                          <div class="col">
-                            <div class="" id="ingresos"><p>Ingresos: AR$</p></div>
-                            <!-- Green progressbar -->
-                            <div class="progressbar color-green" data-progress="100">
-                              <span></span>
+              <!-- Top Navbar -->
+                <div class="navbar" id="navi">
+                  <div class="navbar-bg"></div>
+                  <div class="navbar-inner padding-left padding-right">
+                    <div class="title" id="title_top"></div>
+                    <div class="right"><a href="#" id="irAConfig"><i><img src="img/settings.png" width="40px" height="40px"></i></a></div>
+                  </div>
+                </div>
+              <div class="page no-navbar no-toolbar no-swipeback">
+                <div class="page-content login-screen-content">
+                <div class="login-screen-title margin-top"><img src="img/ca_logo1.png" width="160px" height="160px"></div>
+                  <form>
+                    <div class="list">
+                      <ul>
+                        <li class="item-content item-input">
+                          <div class="item-inner">
+                            <div class="item-title item-label">E-mail</div>
+                            <div class="item-input-wrap">
+                              <input type="text" id="emailLogin" placeholder="Ingrese su e-mail" />
+                              <span class="input-clear-button"></span>
                             </div>
                           </div>
-                          <br>
-                          <!-- Total en Gastos -->
-                          <div class="col">
-                            <div class="" id="gastos"><p>Gastos: AR$</p></div>
-                            <!-- Red progressbar -->
-                            <div class="progressbar color-red" data-progress="20">
-                              <span></span>
+                        </li>
+                        <li class="item-content item-input">
+                          <div class="item-inner">
+                            <div class="item-title item-label">Contraseña</div>
+                            <div class="item-input-wrap">
+                              <input type="password" id="passLogin" placeholder="Ingresar contraseña" />
+                              <span class="input-clear-button"></span>
                             </div>
                           </div>
-                          <br>
-                          <!-- Saldo Total -->
-                          <div class="col">
-                            <div class="text-align-center" id="saldo"><p>Saldo: AR$</p></div>
-                          </div>
-                        </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="list block-list">
+                      <ul>
+                        <li><a href="#" id="access" class="list-button button button-raised">Iniciar Sesión</a></li>
+                      </ul>
+                      <div class="block-footer margin-top">
+                        <a href="#" id="res_pass"><p>Recuperar Contraseña</p></a>
                       </div>
-                      <!-- Inicia Botonera -->
-                      <div class="block block-strong">
-                        <div class="block list col flex-direction-column">
-                          <!-- Botón Ingresos -->
-                          <div class="flex-direction-row">
-                            <a href="#" id="irAIngresos">
-                              <button class="col button button-large button-raised button-fill">Ingresos <img src="img/income.png" width="50px" height="50px"></button>
-                            </a>
-                          </div> <br>
-                          <!-- Botón Gastos -->
-                          <div class="flex-direction-row">
-                            <a href="#" id="irAGastos">
-                              <button class="col button button-large button-raised button-fill">Gastos <img src="img/expense.png" width="50px" height="50px"></button>
-                            </a>
-                          </div> <br>
-                          <!-- Botón Cuentas -->
-                          <div class="flex-direction-row">
-                            <a href="#" id="irACuentas">
-                              <button class="col button button-large button-raised button-fill">Cuentas <img src="img/accounts.png" width="50px" height="50px"></button>
-                            </a>
-                          </div> <br>
-                          <!-- Botón Informes -->
-                          <div class="flex-direction-row">
-                            <a href="#" id="irAInformes">
-                              <button class="col button button-large button-raised button-fill">Informes <img src="img/reports.png" width="50px" height="50px"></button>
-                            </a>
-                          </div> <br>
-                          <!-- Botón Más -->
-                          <div class="flex-direction-row">
-                            <a href="#" id="irAMas">
-                              <button class="col button button-large button-raised button-fill">Más <img src="img/more.png" width="50px" height="50px"></button>
-                            </a>
-                          </div> <br>
-                        </div> <!-- Fin block list -->
-                      </div> <!-- Fin Botonera -->
-                    </div> <!-- Fin Block principal -->
-                </div> <!-- Fin Page Content -->
+                      <div class="block-footer margin-top">
+                        <p class="pregun1">¿Aún no tienes cuenta?</p>
+                      </div>
+                      <ul>
+                        <li class="margin-top"><a href="#" id="regis_1" class="list-button button button-fill">Registrarse</a></li>
+                      </ul>
+                    </div>
+                  </form>
+                </div>
+              </div>
             </div> <!-- Cierra Initial Page, "data-name" contains page name -->
         </div> <!-- Cierra View-view main -->
     </div> <!-- Cierra id="app" -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
 
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+   <!-- Autenticación -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+   <!-- Base de Datos -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBGhBJoUUP61X5XUhqp6jySTs5eD0HZD1g",
+        authDomain: "cash-admin-3f857.firebaseapp.com",
+        projectId: "cash-admin-3f857",
+        storageBucket: "cash-admin-3f857.appspot.com",
+        messagingSenderId: "708678366517",
+        appId: "1:708678366517:web:3437fd10517bad7a7f087c"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/framework7-bundle.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
-</body>
 
+</body>
 </html>
