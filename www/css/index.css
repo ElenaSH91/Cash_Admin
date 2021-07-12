@@ -1,4 +1,4 @@
-*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -120,7 +120,7 @@ h1 {
   border-radius: 5px;
 }
 
-/*********** Login Screen *************/
+/*********** Login Register Screen *************/
 
 .login-screen .page, .login-screen-content, .login-screen-page {
   padding-top: 80px;
@@ -149,8 +149,8 @@ h1 {
   color: #FFF;
 }
 
-
 /*********** All Pages *************/
+
 .navbar-bg {
   background-color: #2F0059;
 }
@@ -169,8 +169,24 @@ h1 {
   color: #fff;
 }
 
+.color-green {
+--f7-theme-color-rgb: 255,255,255;
+}
 
-/*********** All Pages *************/
+.color-red {
+--f7-theme-color-rgb: 255,255,255;
+}
+
+.list .item-title {
+  color: #542294;
+}
+
+.list .item-media {
+  justify-content: center;
+  color: white;
+}
+
+/*********** Ingresos, Gastos y Cuentas *************/
 
 #ingCancel, #gasCancel, #cueCancel {
   font-size: 12pt;
@@ -196,26 +212,54 @@ h1 {
   background-color: transparent;
 }
 
-.mesASal {
+.mesAMon {
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 
-#currentMA{
-  margin-left: 80px;
+.puntitos {
+  margin-left: 10px;
   margin-right: 10px;
 }
 
-#currentS{
-  margin-right: 40px;
-  margin-left: 10px;
+.block {
+  margin-top: 2px;
 }
 
-.dere1 {
+.box_date {
+  height: 40px;
+  text-align: center;
+  font-size: 10pt;
+  color: #FFF;
+  justify-content: center;
+  margin-bottom: 5px;
+  align-items: center;
+  display: flex;
+  background-color: #8967b5;
+}
+
+#currentMAI, #currentMAG {
+  margin-left: 96px;
+  margin-right: 0px;
+}
+
+#totalIngreso, #totalGasto {
+  margin-right: 10px;
+  margin-left: 0px;
+}
+
+.rightOk {
   text-align: right;
 }
 
+/*********** Más *************/
+
+.list, .simple-list {
+  margin-top: 5px;
+}
+
 /*********** Color Picker *************/
+
 .demo-list-icon,
 .icon-f7 {
   background: #ccc;
@@ -224,7 +268,7 @@ h1 {
 }
 
 .ios .demo-list-icon {
-  width: 250px;
+  width: 350px;
   height: 45px;
   border-radius: 6px;
   box-sizing: border-box;
@@ -232,7 +276,7 @@ h1 {
 
 .md .demo-list-icon,
 .aurora .demo-list-icon {
-  width: 250px;
+  width: 350px;
   height: 45px;
   border-radius: 4px;
 }

@@ -18,56 +18,84 @@
         <div class="list block-list no-hairlines-md">
           <ul>
             <li>
-              <div class="item-content item-input item-input-outline">
+              <div class="item-content item-input">
                 <div class="item-inner">
-                  <div class="item-title item-floating-label">Ingresar Monto</div>
+                  <div class="item-title">Ingresar Monto</div>
                     <div class="item-input-wrap">
-                    <input type="number" min="0.00" max="100000.00" step="0.01" placeholder="$0.00" autocomplete="off" id="montoIngre" />
+                    <input type="number" placeholder="$0.00" autocomplete="off" id="montoIngre"/>
                     <span class="input-clear-button"></span>
                   </div>
                 </div>
               </div>
             </li>
             <li>
-              <div class="item-content item-input item-input-outline">
+              <a class="item-link smart-select smart-select-init">
+                <select id="listaCuentasI"></select>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title">Seleccionar Cuenta</div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <div class="item-content item-input">
                 <div class="item-inner">
-                  <div class="item-title item-floating-label">Seleccionar Fecha</div>
+                  <div class="item-title">Seleccionar Fecha</div>
                     <div class="item-input-wrap">
-                    <input type="text" placeholder="dd/mm/aa" readonly="readonly" id="demo-calendar-modal" />
+                    <input type="text" placeholder="dd/mm/aa" id="demo-calendar-modal" readonly/>
                     <span class="input-clear-button"></span>
                   </div>
                 </div>
               </div>
             </li>
             <li>
-              <div class="item-content item-input item-input-outline">
+              <a class="item-link smart-select smart-select-init">
+                <select id="categoIngre"></select>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title">Seleccionar Categoría</div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <div class="item-content item-input">
                 <div class="item-inner">
-                  <div class="item-title item-floating-label">Seleccionar Categoría</div>
+                  <div class="item-title">Agregar Pagador</div>
                     <div class="item-input-wrap">
-                    <input type="text" placeholder="No Categorizado" readonly="readonly" autocomplete="off" id="categoIngre" />
+                    <input type="text" id="addPaga" placeholder="Pagador" autocomplete="off" />
                     <span class="input-clear-button"></span>
                   </div>
                 </div>
               </div>
             </li>
             <li>
-              <div class="item-content item-input item-input-outline">
+              <div class="item-content item-input">
                 <div class="item-inner">
-                  <div class="item-title item-floating-label">Seleccionar Pagador</div>
+                  <div class="item-title">Agregar Notas</div>
                     <div class="item-input-wrap">
-                    <input type="text" placeholder="Pagador" autocomplete="off" id="selecPaga" />
+                    <input type="text" id="addNotasI" placeholder="Notas" autocomplete="off" />
                     <span class="input-clear-button"></span>
                   </div>
                 </div>
               </div>
             </li>
             <li>
-              <div class="item-content item-input item-input-outline">
+              <div class="item-content item-input">
                 <div class="item-inner">
-                  <div class="item-title item-floating-label">Agregar Notas</div>
-                    <div class="item-input-wrap">
-                    <input type="text" placeholder="Notas" autocomplete="off" id="selecNotasI" />
-                    <span class="input-clear-button"></span>
+                  <div class="item-title item-floating-label">Seleccionar Color</div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="item-content item-input">
+                <div class="item-media">
+                  <i class="icon demo-list-icon" id="demo-color-picker-spectrum-value"></i>
+                </div>
+                <div class="item-inner">
+                  <div class="item-input-wrap">
+                    <input type="text" placeholder="Color" readonly="readonly" id="demo-color-picker-spectrum" />
                   </div>
                 </div>
               </div>
