@@ -54,22 +54,22 @@ var colIdRegistros = db.collection("idRegistros");
 var saldoCConvert = "";
 var montoGConvert = "";
 var montoIConvert = "";
-//var idIngreso = 0;
-//var idGasto = 0;
+var idIngreso = 0;
+var idGasto = 0;
 
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
 
-  //  fnIdReg();
+    fnIdReg();
 });
 
 // Option 1. Using one 'page:init' handler for all pages
 $$(document).on('page:init', function (e) {
     // Do something here when page loaded and initialized
 
-  //  fnActualizarIds();
+    fnActualizarIds();
 })
 
 // Option 2. Using live 'page:init' event handlers for each page
@@ -89,6 +89,8 @@ $$("#irACuentas").on("click",fnIrACuentas); //Redirecciona a la página Cuentas
 $$("#irAInformes").on("click",fnIrAInformes); //Redirecciona a la página Informes
 $$("#irAMas").on("click",fnIrAMas); //Redirecciona a la página Más
 $$("#irAConfig").on("click",fnIrAConfig); //Redirecciona a la página Configuraciones
+fnSaldoTI();
+fnSaldoTG();
 })
 
 $$(document).on('page:init', '.page[data-name="registro"]', function (e) {
@@ -373,7 +375,7 @@ function fnColorPicker() {
 }
 
 /*----Carga de IDs de los Registros de Ingresos y Gastos----*/
-/*-function fnIdReg() {
+function fnIdReg() {
   // Cargo el ID Ingresos de Base a la variable
   colIdRegistros.doc('idRIngresos').get()
     .then(function(insert) {
@@ -393,10 +395,10 @@ function fnColorPicker() {
     .catch(function(error){
       console.log("Error: "+ error);
     });
-}--*/
+}
 
 /*----Actualización de los IDs de Registros de Ingresos y Gastos----*/
-/*-function fnActualizarIds() {
+function fnActualizarIds() {
 // Actualizo ID Registros Gastos
   var idRI = idIngreso;
   var actRegI = {
@@ -421,7 +423,7 @@ function fnColorPicker() {
   .catch(function(error){
     console.log(error);
   });
-} --*/
+}
 
 /*-----------------------------------------------------------------*/
 /*-----------------------------INGRESOS----------------------------*/
@@ -434,7 +436,8 @@ function fnCrearIngreso() {
   var paga = $$("#addPaga").val();
   var notes = $$("#addNotasI").val();
   var colorI = $$("#demo-color-picker-spectrum").val();
-  var miId = paga; //idIngreso.toString()
+  var miId = idIngreso.toString()
+
   var newIngreso = {
     monto: montoi,
     cuenta: account,
@@ -449,7 +452,7 @@ function fnCrearIngreso() {
   colIngresos.doc(miId).set(newIngreso)
   .then(function(docRef){
     app.dialog.alert('Se creó el registro correctamente');
-    //idIngreso++;
+    idIngreso++;
     fnIrAIngresos();
   })
   .catch(function(error){
@@ -474,7 +477,7 @@ colIngresos.where("userId","in",["cashapp",userOn]).get()
       fnFormatPesoArI(montoReg); //Transforma el monto en $
 
       $$("#ingresosRegis").append(`<li>
-        <a href="#" onclick="fnDialogDelI(`+"`"+idI1+"`"+`)">
+        <a href="#" onclick="fnEliminarRegI(`+"`"+idI1+"`"+`)">
         <div class="box_date">`+date+`</div>
           <div class="item-link item-content">
           <div class="item-media" style="background-color:`+colorIn+`;"><i class="material-icons"></i></div>
@@ -504,7 +507,7 @@ function fnFormatPesoArI(value) {
 }
 
 /*----Función Eliminar Registros de la Lista Ingresos----*/
-function fnDialogDelI(i) {
+function fnEliminarRegI(i) {
   app.dialog.confirm('¿Desea eliminar este registro?', function () {
     $$("#totalIngreso").html("");
     $$("#ingresosRegis").html("");
@@ -534,6 +537,7 @@ function fnSaldoTI() {
          console.log(sumaTotalIngresos);
       });
       $$("#totalIngreso").html("$ "+sumaTotalIngresos);
+      $$("#ingresosInicio").append(`<p>Ingresos: $ `+sumaTotalIngresos+`</p>`);
     })
     .catch(function(error){
       console.log("Error: "+ error);
@@ -584,7 +588,7 @@ function fnCrearGasto() {
   var benefi = $$("#addBene").val();
   var notes = $$("#addNotasG").val();
   var colorG = $$("#demo-color-picker-spectrum").val();
-  var miId = benefi; //idGasto.toString()
+  var miId = idGasto.toString()
   var newGasto = {
     monto: montog,
     cuenta: account,
@@ -599,7 +603,7 @@ function fnCrearGasto() {
   colGastos.doc(miId).set(newGasto)
   .then(function(docRef){
     app.dialog.alert('Se creó el registro correctamente');
-  //  idGasto++;
+    idGasto++;
     fnIrAGastos();
   })
   .catch(function(error){
@@ -624,7 +628,7 @@ colGastos.where("userId","in",["cashapp",userOn]).get()
       fnFormatPesoArG(montoReg); //Transforma el monto en $
 
       $$("#gastosRegis").append(`<li>
-      <a href="#" onclick="fnDialogDelG(`+"`"+idG1+"`"+`)">
+      <a href="#" onclick="fnEliminarRegG(`+"`"+idG1+"`"+`)">
       <div class="box_date">`+date+`</div>
           <div class="item-link item-content">
           <div class="item-media" style="background-color:`+colorGa+`;"><i class="material-icons"></i></div>
@@ -654,7 +658,7 @@ function fnFormatPesoArG(value) {
 }
 
 /*----Función Eliminar Registros de la Lista Gastos----*/
-function fnDialogDelG(g) {
+function fnEliminarRegG(g) {
   app.dialog.confirm('¿Desea eliminar este registro?', function () {
     $$("#totalGasto").html("");
     $$("#gastosRegis").html("");
@@ -684,6 +688,7 @@ function fnSaldoTG() {
          console.log(sumaTotalGastos);
       });
       $$("#totalGasto").html("$ "+sumaTotalGastos);
+      $$("#gastosInicio").append(`<p>Gastos: $ `+sumaTotalGastos+`</p>`);
     })
     .catch(function(error){
       console.log("Error: "+ error);
